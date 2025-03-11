@@ -109,9 +109,9 @@ jobs:
          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
         
          echo "Stopping old container..."
-         if [ "$(docker ps -q -f name=fe-iniaga)" ]; then
-           docker stop fe-iniaga
-           docker rm fe-iniaga
+         if [ "$(docker ps -q -f name=fe-iniaga-home)" ]; then
+           docker stop fe-iniaga-home
+           docker rm fe-iniaga-home
          else
            echo "No existing container found"
          fi
@@ -120,11 +120,10 @@ jobs:
          docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/zayyid/fe-iniaga:latest
         
          echo "Running new container..."
-         docker run -d --name fe-iniaga -p 9006:4000 -v $ENV_FILE:/root/.env --env-file $ENV_FILE ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/zayyid/fe-iniaga:latest
+         docker run -d --name fe-iniaga-home -p 9006:3000 -v $ENV_FILE:/root/.env-iniaga --env-file $ENV_FILE ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/zayyid/fe-iniaga:latest
 
          echo "Checking running containers..."
          docker ps -a
 
          echo "Cleanup old Docker images..."
          docker system prune -f
-  
