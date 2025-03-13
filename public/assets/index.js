@@ -41,6 +41,7 @@ import icScreen3 from './screens/screen-3.png'
 
 // ICONS
 import icArrowRight from './icons/ic-arrow-right-up.png'
+import icRecruitment from './icons/ic-recruitment.png'
 
 export {
   airbnb,
@@ -81,5 +82,6 @@ export {
   icScreen1,
   icScreen2,
   icScreen3,
-  icArrowRight
+  icArrowRight,
+  icRecruitment
 };

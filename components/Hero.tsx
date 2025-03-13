@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,65 +20,68 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className={`text-center sm:pt-16 pt-6`}>
-      <div
-        className={`flex-1 ${styles.flexCenter} flex-col xl:px-0 sm:px-16 px-[20px]`}
-      >
-        <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[35px] text-white ss:leading-[100px] leading-[45px]">
-            Penjualan Optimal <br className="sm:block hidden" />
+    <section id="home" className="text-center sm:pt-16 pt-6">
+      {/* Header Text */}
+      <div className="flex-1 flex flex-col items-center xl:px-0 sm:px-16 px-6">
+        <div className="w-full max-w-3xl">
+          <h1 className="font-poppins font-semibold text-[35px] sm:text-[50px] lg:text-[65px] text-white leading-tight">
+            Penjualan Optimal <br className="hidden sm:block" />
             <span className="text-[#247bfe]">Teknologi</span> Masa Kini
           </h1>
+          <p className={`${styles.paragraph1} mt-5 text-base sm:text-lg break-words`}>
+            Tim ahli kami siap membantu Anda menemukan aplikasi penjualan terbaik
+            sesuai kebutuhan bisnis.
+            <br className="hidden sm:block" />
+            Dengan analisis fitur, biaya, dan manfaat, kami memastikan solusi
+            optimal untuk meningkatkan performa dan produktivitas tim Anda.
+          </p>
         </div>
-        <p className={`${styles.paragraph1} mt-5`}>
-          Tim ahli kami siap membantu Anda menemukan aplikasi penjualan terbaik
-          sesuai kebutuhan bisnis.
-          <br className="sm:block hidden" />
-          Dengan analisis fitur, biaya, dan manfaat, kami memastikan solusi
-          optimal untuk meningkatkan performa dan produktivitas tim Anda.
-        </p>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-center gap-4 my-10">
+      {/* Buttons */}
+      <div className="flex flex-wrap justify-center gap-4 my-10 sm:px-0 px-6">
         <Link
-          href="/register"
-          className={`px-6 py-4 ss:px-8 ss:py-5 ${component.btnPrimary} flex items-center justify-center gap-2 group`}
+          href="#pricingPlant"
+          className={`px-6 py-3 sm:px-8 sm:py-4 ${component.btnPrimary} flex items-center justify-center gap-2 group`}
         >
           <span className="leading-[32px]">Registration</span>
           <Image
             src={icArrowRight}
             alt="arrow"
-            className="w-[8%] ss:w-[20%] h-auto transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1"
+            className="w-[20px] h-auto transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1"
           />
         </Link>
 
         <Link
           href="#wrapperContent"
-          className={`px-6 py-4 ss:px-8 ss:py-5 ${component.btnSecondary} text-center`}
+          className={`px-6 py-3 sm:px-8 sm:py-4 ${component.btnSecondary} text-center`}
         >
           Learn More
         </Link>
       </div>
 
-      <div
-        className={`${styles.flexCenter} flex-1 flex mt-[93px] relative align-center sm:px-16 px-6`}
-      >
+      {/* Images */}
+      <div className="flex-1 flex justify-center items-center mt-12 sm:mt-[93px] relative px-6">
+        {/* Left Floating Image */}
         <Image
           src={icScreen2}
           alt="screen2"
-          className="w-[23%] ss:w-[20%] h-auto z-[6] rounded-xl absolute ss:start-16 start-6 shadow-sm transition-transform duration-500"
+          className="w-[25%] sm:w-[20%] lg:w-[18%] h-auto rounded-xl absolute z-10 left-4 sm:left-12 shadow-sm transition-transform duration-700 ease-in-out"
           style={{ transform: `translateY(${scrollY * 0.05}px)` }}
         />
+
+        {/* Center Main Image */}
         <Image
           src={icScreen1}
           alt="screen1"
-          className="w-[90%] ss:w-[70%] h-[100%] z-[5] rounded-xl relative"
+          className="w-[90%] sm:w-[70%] lg:w-[60%] h-auto rounded-xl relative"
         />
+
+        {/* Right Floating Image */}
         <Image
-          dir="rtl"
           src={icScreen3}
           alt="screen3"
-          className="w-[23%] ss:w-[25%] h-auto z-[6] rounded-xl absolute ss:start-16 start-6 shadow-sm transition-transform duration-500"
+          className="w-[25%] sm:w-[20%] lg:w-[18%] h-auto rounded-xl absolute z-10 right-4 sm:right-12 shadow-sm transition-transform duration-700 ease-in-out"
           style={{ transform: `translateY(${scrollY * 0.05}px)` }}
         />
       </div>

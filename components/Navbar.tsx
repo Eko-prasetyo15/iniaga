@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
             ))}
             <li className="mt-4">
               <Link
-                href="/register"
+                href="#pricingPlant"
                 className="bg-black text-white px-4 py-2 rounded-full font-semibold text-sm shadow-md hover:bg-white hover:text-black transition"
               >
                 Register

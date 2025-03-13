@@ -4,7 +4,7 @@ const styles = {
   heading1:
     "font-poppins font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[56.8px] w-full",
   heading2:
-    "font-poppins font-semibold xs:text-[48px] text-[40px] text-black xs:leading-[76.8px] leading-[56.8px] w-full",
+    "font-poppins font-semibold xs:text-[38px] text-[28px] text-black xs:leading-[76.8px] leading-[36.8px] w-full",
   paragraph:
     "font-poppins font-normal text-black text-[18px] leading-[1.667em]",
   paragraph1:
@@ -33,9 +33,10 @@ export const layout = {
 
 export const component = {
   btnPrimary:
-    "bg-[#247bfe] ss:w-[20%] w-full text-white px-6 py-3 rounded-xl font-semibold text-[16px] ss:text-[18px] shadow-md transition transform hover:-translate-y-1 duration-500",
+    "bg-[#247bfe] xs:w-[50%] md:w-auto w-full text-white px-6 py-3 rounded-xl font-semibold text-[16px] ss:text-[18px] shadow-md transition transform hover:-translate-y-1 duration-500",
   btnSecondary:
-    "bg-transparent ss:w-[20%] w-full text-white border border-white px-6 py-3 rounded-xl font-semibold text-[16px] ss:text-[18px] shadow-md hover:bg-white hover:text-black transition transform hover:-translate-y-1 duration-500",
+    "bg-transparent xs:w-[50%] md:w-auto w-full text-white border border-white px-6 py-3 rounded-xl font-semibold text-[16px] ss:text-[18px] shadow-md hover:bg-white hover:text-black transition transform hover:-translate-y-1 duration-500",
+  titleAccent: "text-[#247bfe] font-bold text-[16px] uppercase"
 };
 
 export default styles;

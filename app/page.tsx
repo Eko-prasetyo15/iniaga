@@ -42,9 +42,7 @@ const Home: React.FC = () => {
           isScrolled ? "bg-[#171717]" : "transparent"
         }`}
       >
-        <div
-          className={`${styles.paddingX} ${styles.marginXauto} ${styles.boxWidth}`}
-        >
+        <div className={`${styles.paddingX} ${styles.marginXauto} ${styles.boxWidth}`}>
           <Navbar />
         </div>
       </div>
@@ -53,7 +51,7 @@ const Home: React.FC = () => {
           <Hero />
         </div>
       </div>
-      <div className="bg-white rounded-[50px] pt-14 ss:pt-[50px] flex justify-center">
+      <div className="bg-white rounded-[50px] pt-14 ss:pt-[50px]">
         <div className={`${styles.paddingX}`}>
           <div className={`${styles.boxWidth}`}>
             <Stats />
@@ -63,7 +61,7 @@ const Home: React.FC = () => {
       </div>
       <div
         id="wrapperContent"
-        className={`${styles.paddingX} ${styles.flexStart} pt-14`}
+        className={`${styles.flexStart} pt-14`}
       >
         <div className={`${styles.boxWidth}`}>
           {/* <Billing /> */}
